@@ -1,6 +1,8 @@
-package android.mobile.com.androidtrainings;
+package android.mobile.com.androidtrainings.asynctasks;
 
 import android.content.Context;
+import android.mobile.com.androidtrainings.R;
+import android.mobile.com.androidtrainings.activities.AsyncTaskDemoActivity;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
@@ -37,8 +39,8 @@ public class TextChangerTask extends AsyncTask<String,Integer,String> {
   @Override
   protected void onPostExecute(String string) {
     Log.println(Log.INFO,"Post Execute","************************Post Execute******************");
-    MainActivity mainActivity = (MainActivity) this.context;
-    TextView view = (TextView)mainActivity.findViewById(R.id.random_text);
+    AsyncTaskDemoActivity asyncTaskDemoActivity = (AsyncTaskDemoActivity) this.context;
+    TextView view = (TextView) asyncTaskDemoActivity.findViewById(R.id.random_text);
     view.setText(string);
   }
 

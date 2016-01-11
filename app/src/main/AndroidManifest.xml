@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="android.mobile.com.androidtrainings"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="android.mobile.com.androidtrainings"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
   <application
       android:allowBackup="true"
@@ -8,13 +9,46 @@
       android:label="@string/app_name"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
-    <activity android:name=".MainActivity">
+    <activity
+        android:name=".activities.MainActivity"
+        android:label="@string/title_activity_main">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
-
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
+    <activity
+        android:name=".activities.AsyncTaskDemoActivity"
+        android:label="@string/title_async_task_demo"/>
+    <activity
+        android:name=".activities.ServicesDemoActivity"
+        android:label="@string/title_services_demo"/>
+
+    <service android:name=".services.IntentServiceNonSticky">
+      <intent-filter>
+        <action android:name="android.mobile.com.androidtrainings.IntentServiceNonSticky"/>
+      </intent-filter>
+    </service>
+    <service android:name=".services.IntentServiceIntentRedelivery">
+      <intent-filter>
+        <action android:name="android.mobile.com.androidtrainings.IntentServiceIntentRedelivery"/>
+      </intent-filter>
+    </service>
+    <service android:name=".services.SimpleServiceNonSticky">
+      <intent-filter>
+        <action android:name="android.mobile.com.androidtrainings.SimpleServiceNonSticky"/>
+      </intent-filter>
+    </service>
+    <service android:name=".services.SimpleServiceSticky">
+      <intent-filter>
+        <action android:name="android.mobile.com.androidtrainings.SimpleServiceSticky"/>
+      </intent-filter>
+    </service>
+    <service android:name=".services.SimpleServiceIntentRedelivery">
+      <intent-filter>
+        <action android:name="android.mobile.com.androidtrainings.SimpleServiceIntentRedelivery"/>
+      </intent-filter>
+    </service>
   </application>
 
 </manifest>

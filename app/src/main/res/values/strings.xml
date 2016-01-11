@@ -1,3 +1,13 @@
 <resources>
   <string name="app_name">AndroidTrainings</string>
+  <string name="title_activity_main">MainActivity</string>
+  <string name="title_async_task_demo">Async Task Demo</string>
+  <string name="title_services_demo">Services Demo</string>
+  <string name="btn_async_tasks_demo">Async Task Demo</string>
+  <string name="btn_services_demo">Services Demo</string>
+  <string name="btn_intent_service_non_sticky">Intent Service Non Sticky</string>
+  <string name="btn_intent_service_intent_redelivery">Intent Service Intent Redelivery</string>
+  <string name="btn_simple_service_non_sticky">Simple Service Non Sticky</string>
+  <string name="btn_simple_service_sticky">Simple Service Sticky</string>
+  <string name="btn_simple_service_intent_redelivery">Simple Service Intent Redelivery</string>
 </resources>
