@@ -8,20 +8,6 @@
     tools:context=".activities.ServicesDemoActivity">
 
   <Button
-      android:id="@+id/btnNonStickyService"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:onClick="buttonClicked"
-      android:text="@string/btn_intent_service_non_sticky"/>
-
-  <Button
-      android:id="@+id/btnServiceIntentRedelivery"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:onClick="buttonClicked"
-      android:text="@string/btn_intent_service_intent_redelivery"/>
-
-  <Button
       android:id="@+id/btnSimpleServiceNonSticky"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -41,4 +27,18 @@
       android:layout_height="wrap_content"
       android:onClick="buttonClicked"
       android:text="@string/btn_simple_service_intent_redelivery"/>
+
+  <Button
+      android:id="@+id/btnIntentServiceNonSticky"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="buttonClicked"
+      android:text="@string/btn_intent_service_non_sticky"/>
+
+  <Button
+      android:id="@+id/btnIntentServiceIntentRedelivery"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="buttonClicked"
+      android:text="@string/btn_intent_service_intent_redelivery"/>
 </LinearLayout>

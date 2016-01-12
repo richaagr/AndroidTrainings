@@ -24,11 +24,11 @@ public class ServicesDemoActivity extends Activity {
 
   public void buttonClicked(View view) {
     switch (view.getId()) {
-      case R.id.btnNonStickyService:
+      case R.id.btnIntentServiceNonSticky:
         startService(IntentServiceNonSticky.class);
         break;
 
-      case R.id.btnServiceIntentRedelivery:
+      case R.id.btnIntentServiceIntentRedelivery:
         startService(IntentServiceIntentRedelivery.class);
         break;
 
