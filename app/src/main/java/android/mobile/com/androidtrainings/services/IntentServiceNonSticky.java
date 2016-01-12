@@ -21,7 +21,7 @@ public class IntentServiceNonSticky extends IntentService {
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
     int onStartCommand = super.onStartCommand(intent, flags, startId);
-    Log.d(TAG, "onStartCommand() with startId " + startId + " in Thread : " + Thread.currentThread().getName());
+    Log.d(TAG, "onStartCommand() with startId " + startId + ", intent: " + intent + " in Thread : " + Thread.currentThread().getName());
     return onStartCommand;
   }
 

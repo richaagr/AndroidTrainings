@@ -23,7 +23,7 @@ public class SimpleServiceNonSticky extends Service {
 
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
-    Log.d(TAG, String.format("onStartCommand() with startId: %d in Thread : %s", startId, Thread.currentThread().getName()));
+    Log.d(TAG, "onStartCommand() with startId " + startId + ", intent: " + intent + " in Thread : " + Thread.currentThread().getName());
     super.onStartCommand(intent, flags, startId);
     return START_NOT_STICKY;
   }
