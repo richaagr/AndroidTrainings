@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="android.mobile.com.androidtrainings"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="android.mobile.com.androidtrainings"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
   <application
       android:allowBackup="true"
@@ -23,6 +22,11 @@
     <activity
         android:name=".activities.ServicesDemoActivity"
         android:label="@string/title_services_demo"/>
+    <activity
+        android:name=".activities.RemoteServiceAIDLDemo"
+        android:label="@string/title_activity_remote_service_demo"
+        android:theme="@style/AppTheme.NoActionBar">
+    </activity>
 
     <service android:name=".services.IntentServiceNonSticky">
       <intent-filter>

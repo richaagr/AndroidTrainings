@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.MainActivity">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <EditText
+      android:id="@+id/edtTxtMsg"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="text"/>
 
   <Button
-      android:id="@+id/btnAsyncTasksDemo"
+      android:id="@+id/btnSendMessage"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:onClick="buttonClicked"
-      android:text="@string/btn_async_tasks_demo"/>
+      android:text="@string/btn_send_msg"/>
 
   <Button
-      android:id="@+id/btnServicesDemo"
+      android:id="@+id/btnGetCount"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:onClick="buttonClicked"
-      android:text="@string/btn_services_demo"/>
+      android:text="@string/btn_get_count"/>
 
-  <Button
-      android:id="@+id/btnRemoteServiceAidl"
+  <TextView
+      android:id="@+id/textViewCount"
+      android:text="Message Count from Service : 0"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:onClick="buttonClicked"
-      android:text="@string/btn_remote_service_aidl"/>
-
+      android:layout_height="wrap_content"/>
 </LinearLayout>
