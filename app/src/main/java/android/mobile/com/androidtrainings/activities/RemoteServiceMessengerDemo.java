@@ -7,21 +7,24 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.mobile.com.androidtrainings.R;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
+import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.thoughtworks.remoteservicedemo.remoteobjects.IRemoteObject;
+import java.lang.ref.WeakReference;
 
-public class RemoteServiceAIDLDemo extends Activity implements ServiceConnection {
+public class RemoteServiceMessengerDemo extends Activity implements ServiceConnection {
 
-  public static final String TAG = RemoteServiceAIDLDemo.class.getName();
-  private IRemoteObject remoteObject;
+  public static final String TAG = RemoteServiceMessengerDemo.class.getName();
   private EditText sendMessageEditText;
   private TextView countTextView;
+  private Messenger messenger;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class RemoteServiceAIDLDemo extends Activity implements ServiceConnection
     super.onStart();
     Intent intent = new Intent();
     intent.setClassName("com.thoughtworks.remoteservicedemo", "com.thoughtworks.remoteservicedemo.services.MyRemoteService");
-    intent.putExtra("TYPE_OF_CONNECTION", "AIDL");
+    intent.putExtra("TYPE_OF_CONNECTION", "MESSENGER");
     bindService(intent, this, Service.BIND_AUTO_CREATE);
   }
 
@@ -50,12 +53,20 @@ public class RemoteServiceAIDLDemo extends Activity implements ServiceConnection
     try {
       switch (view.getId()) {
         case R.id.btnSendMessage:
-          if(remoteObject!=null)
-            remoteObject.printMessage(sendMessageEditText.getText().toString());
+          if (messenger != null) {
+            Bundle bundle = new Bundle();
+            bundle.putString("MSG", sendMessageEditText.getText().toString());
+            Message msg = Message.obtain(null, 0);
+            msg.setData(bundle);
+            messenger.send(msg);
+          }
           break;
         case R.id.btnGetCount:
-          if(remoteObject!=null)
-            countTextView.setText(String.format("Message Count from Service : %d", remoteObject.getCount()));
+          if (messenger != null) {
+            Message msg = Message.obtain(null, 1);
+            msg.replyTo = new Messenger(new CountUpdatingHandler(countTextView));
+            messenger.send(msg);
+          }
           break;
       }
     } catch (RemoteException e) {
@@ -66,12 +77,29 @@ public class RemoteServiceAIDLDemo extends Activity implements ServiceConnection
   @Override
   public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
     Log.d(TAG, "onServiceConnected() got iBinder: " + iBinder);
-    remoteObject = IRemoteObject.Stub.asInterface(iBinder);
-    Log.d(TAG, "remoteObject retrieved is: " + remoteObject);
+    messenger = new Messenger(iBinder);
   }
 
   @Override
   public void onServiceDisconnected(ComponentName componentName) {
-    remoteObject = null;
+    messenger = null;
   }
+
+  private static class CountUpdatingHandler extends Handler {
+
+    private final WeakReference<TextView> countTextView;
+
+    public CountUpdatingHandler(TextView textView) {
+      countTextView = new WeakReference<>(textView);
+    }
+
+    @Override
+    public void handleMessage(Message msg) {
+      TextView textView = countTextView.get();
+      if(textView !=null) {
+        textView.setText(String.format("Message Count from Service : %s", msg.getData().getInt("COUNT")));
+      }
+    }
+  }
+
 }
