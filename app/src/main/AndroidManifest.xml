@@ -23,6 +23,9 @@
         android:name=".activities.ServicesDemoActivity"
         android:label="@string/title_services_demo"/>
     <activity
+        android:name=".activities.LocalBoundServiceDemo"
+        android:label="@string/title_activity_remote_service_messenger_demo" />
+    <activity
         android:name=".activities.RemoteServiceMessengerDemo"
         android:label="@string/title_activity_remote_service_messenger_demo" />
     <activity
@@ -52,6 +55,11 @@
     <service android:name=".services.SimpleServiceIntentRedelivery">
       <intent-filter>
         <action android:name="android.mobile.com.androidtrainings.SimpleServiceIntentRedelivery"/>
+      </intent-filter>
+    </service>
+    <service android:name=".services.BoundService">
+      <intent-filter>
+        <action android:name="android.mobile.com.androidtrainings.BoundService"/>
       </intent-filter>
     </service>
   </application>

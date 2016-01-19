@@ -11,11 +11,13 @@
   <string name="btn_simple_service_sticky">Simple Service Sticky</string>
   <string name="btn_simple_service_intent_redelivery">Simple Service Intent Redelivery</string>
   <string name="btn_remote_service_aidl">Remote Service(AIDL)</string>
+  <string name="btn_local_bound_service">Local Bound Service</string>
   <string name="btn_remote_service_messenger">Remote Service(Messenger)</string>
-  <string name="btn_send_msg">Send Message to remote service</string>
-  <string name="btn_get_count">Get count from remote service</string>
+  <string name="btn_send_msg">Send Message to bound service</string>
+  <string name="btn_get_count">Get count from bound service</string>
   <string name="title_activity_remote_service_aidl_demo">RemoteServiceDemo(AIDL)</string>
   <string name="title_activity_remote_service_messenger_demo">RemoteServiceDemo(Messenger)</string>
+  <string name="title_activity_local_bound_service_demo">LocalBoundServiceDemo</string>
   <string name="txt_started_services">Started Services</string>
   <string name="txt_bound_services">Bound Services</string>
 </resources>

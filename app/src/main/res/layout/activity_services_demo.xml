@@ -55,6 +55,13 @@
       android:text="@string/txt_bound_services"/>
 
   <Button
+      android:id="@+id/btnLocalBoundService"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="buttonClicked"
+      android:text="@string/btn_local_bound_service"/>
+
+  <Button
       android:id="@+id/btnRemoteServiceMessenger"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
