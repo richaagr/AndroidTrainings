@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context=".activities.ServicesDemoActivity">
 
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      style="@style/service_type_heading_style"
+      android:text="@string/txt_started_services"/>
+
   <Button
       android:id="@+id/btnSimpleServiceNonSticky"
       android:layout_width="match_parent"
@@ -41,4 +47,25 @@
       android:layout_height="wrap_content"
       android:onClick="buttonClicked"
       android:text="@string/btn_intent_service_intent_redelivery"/>
+
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      style="@style/service_type_heading_style"
+      android:text="@string/txt_bound_services"/>
+
+  <Button
+      android:id="@+id/btnRemoteServiceMessenger"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="buttonClicked"
+      android:text="@string/btn_remote_service_messenger"/>
+
+  <Button
+      android:id="@+id/btnRemoteServiceAidl"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:onClick="buttonClicked"
+      android:text="@string/btn_remote_service_aidl"/>
+
 </LinearLayout>

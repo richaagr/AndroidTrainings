@@ -43,6 +43,14 @@ public class ServicesDemoActivity extends Activity {
       case R.id.btnSimpleServiceIntentRedelivery:
         startService(SimpleServiceIntentRedelivery.class);
         break;
+
+      case R.id.btnRemoteServiceMessenger:
+        startActivity(new Intent(this, RemoteServiceMessengerDemo.class));
+        break;
+
+      case R.id.btnRemoteServiceAidl:
+        startActivity(new Intent(this, RemoteServiceAIDLDemo.class));
+        break;
     }
   }
 

@@ -22,12 +22,6 @@ public class MainActivity extends Activity {
       case R.id.btnServicesDemo:
         startActivity(new Intent(this, ServicesDemoActivity.class));
         break;
-      case R.id.btnRemoteServiceMessenger:
-        startActivity(new Intent(this, RemoteServiceMessengerDemo.class));
-        break;
-      case R.id.btnRemoteServiceAidl:
-        startActivity(new Intent(this, RemoteServiceAIDLDemo.class));
-        break;
     }
   }
 }

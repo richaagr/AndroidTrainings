@@ -16,4 +16,6 @@
   <string name="btn_get_count">Get count from remote service</string>
   <string name="title_activity_remote_service_aidl_demo">RemoteServiceDemo(AIDL)</string>
   <string name="title_activity_remote_service_messenger_demo">RemoteServiceDemo(Messenger)</string>
+  <string name="txt_started_services">Started Services</string>
+  <string name="txt_bound_services">Bound Services</string>
 </resources>

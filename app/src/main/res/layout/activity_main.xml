@@ -21,18 +21,4 @@
       android:onClick="buttonClicked"
       android:text="@string/btn_services_demo"/>
 
-  <Button
-      android:id="@+id/btnRemoteServiceMessenger"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:onClick="buttonClicked"
-      android:text="@string/btn_remote_service_messenger"/>
-
-  <Button
-      android:id="@+id/btnRemoteServiceAidl"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:onClick="buttonClicked"
-      android:text="@string/btn_remote_service_aidl"/>
-
 </LinearLayout>
